@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
 
+require('dotenv').config();
+const API_KEY = process.env.API_KEY;
+
 
 const systemPrompt = `
 You are an advanced AI specializing in creating flashcards. Your goal is to generate clear, concise, and effective flashcards for users across various subjects and topics. Each flashcard should have:
