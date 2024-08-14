@@ -28,6 +28,7 @@ Return in the following JSON format
 `
 
 export async function POST(req) {
+    console.log("fff")
     const data = await req.text()
     console.log('Received data:', data);
  
@@ -47,9 +48,17 @@ export async function POST(req) {
     });
  
     const rawResponseText = await response.text();
-    console.log('Raw Response Text:', rawResponseText);
+    // Parse the raw response text into a JSON object
+
+console.log('Raw Response Text:', rawResponseText);
+
+// Assuming jsonResponse is the parsed JSON object
+const jsonResponse = JSON.parse(rawResponseText);
+
+// Accessing the flashcards content directly
+const flashcards = JSON.parse(jsonResponse.choices[0].message.content);
+console.log(flashcards.flashcards)
+
  
-    const flashcards = JSON.parse(rawResponseText.choices[0].message.content);
- 
-   return NextResponse.json(flashcards.flashcard)
+   return NextResponse.json(flashcards.flashcards)
  }
