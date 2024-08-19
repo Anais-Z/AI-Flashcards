@@ -1,4 +1,3 @@
-import { SignIn } from "@clerk/nextjs";
 import {
     AppBar,
     Container,
@@ -7,15 +6,13 @@ import {
     Button,
     Box,
   } from "@mui/material";
-import Link from "next/link";
-
-
-  export default function SignInPage(){
-        return(
-            <>
-          
-            
-            <AppBar position="static">
+  import Link from "next/link";
+  import { SignUp } from "@clerk/nextjs";
+  
+  export default function SignUpPage() {
+    return (
+      <>
+        <AppBar position="static">
           <Toolbar>
             <Typography variant="h6" style={{ flexGrow: 1 }}>
               Flashcard SaaS
@@ -32,20 +29,18 @@ import Link from "next/link";
             </Button>
           </Toolbar>
         </AppBar>
+  
         <Container maxWidth="sm">
-
-                <Box display = "flex"
-                flexDirection="column"
-                alignItems="center"
-                justifyContent="center"
-                >
-
-                    <Typography variant="h4"> Sign In</Typography>
-                    <SignIn/>
-
-                </Box>
-
-            </Container>
-            </>
-        )
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Typography variant="h4">Sign Up</Typography>
+            <SignUp />
+          </Box>
+        </Container>
+      </>
+    );
   }
