@@ -27,7 +27,7 @@ export default function Flashcard() {
 
   useEffect(() => {
     async function getFlashcard() {
-      if (!user) return;
+      if (!search || !user) return;
 
       const colRef = collection(doc(collection(db, "users"), user.id), search);
       const docs = await getDocs(colRef);
