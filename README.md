@@ -1,1 +1,5 @@
-#Still in progress: accessing cards via que list
+ To run:
+
+ Install node js: npm install nodejs
+
+ run command: npm run
